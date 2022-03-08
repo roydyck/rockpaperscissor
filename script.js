@@ -17,8 +17,12 @@ let roundWin = (a,b) => `You win! ${a} beats ${b}`
 let roundLose = (a,b) => `You lose! ${b} beats ${a}`
 let roundDraw = () => "It's a draw!"
 
-function playRound(playerSelection, computerSelection) {
+function playRound(e) {
 
+    computerSelection = computerPlay();
+    playerSelection = this.id;
+    console.log(playerSelection);
+    
     switch(playerSelection) {
         case "rock":
             switch(computerSelection) {
@@ -72,30 +76,33 @@ function playRound(playerSelection, computerSelection) {
             //stuff
     }
 }
-
+/*
 function promptPlayer() {
     let selection = prompt("Rock, paper, or scissors?");
     selection = selection.toLowerCase();
     return selection;
 }
+*/
 
 function game() {
     let playerScore = 0;
     let computerScore = 0;
     let roundResult;
 
-    for (let i = 0; i < 5; i++) {
-        roundResult = playRound(promptPlayer(),computerPlay())
+    roundResult = playRound(promptPlayer(),computerPlay())
 
-        if (roundResult === undefined) {
-        } else if (roundResult) {
-            playerScore++;
-        } else if (!roundResult) {
-            computerScore++;
-        }
+    if (roundResult === undefined) {
+    } else if (roundResult) {
+        playerScore++;
+    } else if (!roundResult) {
+        computerScore++;
     }
 
     alert("Player score: " + playerScore + " | Computer score: " + computerScore);
 }
+
+const buttons = document.querySelectorAll("button");
+
+buttons.forEach(button => button.addEventListener('click', playRound));
 
 game();
