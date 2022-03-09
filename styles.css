@@ -6,3 +6,18 @@
 .button {
     flex: 1;
 }
+
+#resultsContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+#resultsHeader {
+    display: flex;
+    justify-content: center;
+}
+
+#results {
+    display: flex;
+    justify-content: center;
+}
