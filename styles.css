@@ -1,23 +1,39 @@
 .container {
     display: flex;
     justify-content: center;
+    gap: 25px;
+    margin: 25px 0;
 }
 
 .button {
     flex: 1;
+    max-width: 100px;
 }
 
 #resultsContainer {
     display: flex;
     flex-direction: column;
+    width: 250px;
+    margin: auto;
+    padding: 10px 0;
+    border: 2px solid black;
+    border-radius: 12px;
 }
 
 #resultsHeader {
     display: flex;
     justify-content: center;
+    gap: 25px;
+    padding-bottom: 10px;
+    border-bottom: 2px dashed black;
+}
+
+#resultsHeader div {
+    width: 100px;
+    text-align: center;
 }
 
 #results {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
 }
